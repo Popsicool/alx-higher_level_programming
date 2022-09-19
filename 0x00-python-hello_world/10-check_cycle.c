@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "lists.h"
 /**
  * check_cycle - check if a singly list contains circle
  * @list: pointer to the list to check

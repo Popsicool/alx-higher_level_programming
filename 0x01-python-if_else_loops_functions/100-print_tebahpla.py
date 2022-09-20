@@ -6,6 +6,6 @@ while (count < 26):
         no = number
     else:
         no = number - 32
-        print("{}".format(chr(no)), end="")
-        number -= 1
-        count += 1
+    print("{}".format(chr(no)), end="")
+    number -= 1
+    count += 1

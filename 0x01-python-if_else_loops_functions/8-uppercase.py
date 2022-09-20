@@ -7,4 +7,4 @@ def uppercase(word):
         print("{}".format(i), end="")
         count += 1
         if (count == len(word)):
-            print()
+            print("\n")

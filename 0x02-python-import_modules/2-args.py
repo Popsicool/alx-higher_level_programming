@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import sys
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        print("{} argument.".format(1))
+    if len(sys.argv) == 1:
+        print("{} arguments.".format(0))
+    elif len(sys.argv) == 2:
+        print("{} argument:".format(1))
     else:
         print("{} arguments:".format(len(sys.argv) - 1))
     for i in sys.argv:

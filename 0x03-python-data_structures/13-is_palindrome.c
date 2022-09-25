@@ -1,69 +1,56 @@
 #include "lists.h"
 
-/**
- * reverse_listint - reverses a linked list
- * @head: pointer to the first node
- * Return: void
- */
-void reverse_listint(listint_t **head)
-{
-	listint_t *prev = NULL;
-	listint_t *current = *head;
-	listint_t *next = NULL;
+listint_t* replicate_(const listint_t *head){
 
-	while (current)
+  const listint_t *curr = head;
+  listint_t *clone = NULL;
+
+  while (curr != NULL)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+	  add_nodeint_end(&clone, curr->n);
+	  curr = curr->next;
 	}
-
-	*head = prev;
+  return (clone);
 }
 
-/**
- * is_palindrome - checks if a linked list is a palindrome
- * @head: double pointer to the linked list
- * Return: 1 if it is, 0 if not
- */
-int is_palindrome(listint_t **head)
-{
-	listint_t *sl = *head, *fa = *head, *tp = *head, *dup = NULL;
+int is_palindrome(listint_t **head){
+  listint_t *clone, *after, *curr;
+  listint_t *anot = head;
 
-	if (*head == NULL || (*head)->next == NULL)
-		return (1);
 
-	while (1)
+  curr = after = *head;
+  listint_t *before = NULL;
+
+  const listint_t *current;
+  int n,i;
+  int b = 1;
+  current =*head;
+  n = 0;
+
+  while (current != NULL)
 	{
-		fa = fa->next->next;
-
-		if (!fa)
-		{
-			dup = sl->next;
-			break;
-		}
-			if (!fa->next)
-			{
-				dup = sl->next->next;
-				break;
-			}
-			sl = sl->next;
-	}
-	reverse_listint(&dup);
-	while (dup && tp)
-	{
-		if (tp->n == dup->n)
-		{
-			dup = dup->next;
-			tp = tp->next;
-		}
-		else
-			return (0);
+	  current = current->next;
+	  n++;
 	}
 
-	if (!dup)
-		return (1);
+  for(i=0; i<(n-1); i++)
+	{
+	  after= after->next;
+	  curr->next = before;
+	  before = curr;
+	  curr =after;
+	}
+  curr->next = before;
 
-	return (0);
+  clone = replicate_(*head);
+
+  while (curr != NULL && clone != NULL){
+
+	if(curr->n != clone->n)
+	  b = 0;
+	curr = curr->next;
+	clone = clone->next;
+  }
+  free_listint(clone);
+  return(b);
 }

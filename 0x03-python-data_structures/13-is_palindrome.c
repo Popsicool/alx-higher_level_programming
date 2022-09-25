@@ -14,9 +14,11 @@ listint_t* replicate_(const listint_t *head){
 }
 
 int is_palindrome(listint_t **head){
+
+if (*head == NULL || (*head)->next == NULL)
+	return (1);
+
   listint_t *clone, *after, *curr;
-
-
   curr = after = *head;
   listint_t *before = NULL;
 

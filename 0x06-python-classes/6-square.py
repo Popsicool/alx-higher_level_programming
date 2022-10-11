@@ -47,7 +47,7 @@ class Square:
             return
         a = 0
         while (a < self.position[1]):
-            print()
+            print("\n", end="")
             a += 1
 
         i = 0

@@ -31,7 +31,7 @@ class Square:
     def my_print(self):
         if self.__size == 0:
             print()
-        return
+            return
         i = 0
         while (i < self.__size):
             j = 0

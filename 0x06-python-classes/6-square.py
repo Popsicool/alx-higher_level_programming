@@ -45,6 +45,11 @@ class Square:
         if self.__size == 0:
             print()
             return
+        a = 0
+        while (a < self.position[1]):
+            print()
+            a += 1
+
         i = 0
         while (i < self.__size):
             j = 0

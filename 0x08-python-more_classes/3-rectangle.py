@@ -65,9 +65,9 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
-        for row in range(self.__width):
-            for col in range(self.__height):
+        for row in range(self.__height):
+            for col in range(self.__width):
                 rectangle += "#"
-                if (col == (self.height - 1)):
+                if (col == (self.width - 1)):
                     rectangle += "\n"
         return (rectangle)

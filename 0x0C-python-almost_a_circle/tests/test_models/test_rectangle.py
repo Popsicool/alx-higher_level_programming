@@ -253,3 +253,7 @@ class test_rectangle(TestCase):
         """test for missing height"""
         with self.assertRaises(TypeError):
             rec = Rectangle(4)
+
+    def test_documentation(self):
+        """Test documentation"""
+        self.assertTrue(len(Rectangle.__doc__) >= 1)

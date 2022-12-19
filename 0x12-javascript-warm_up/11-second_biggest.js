@@ -11,7 +11,7 @@ if (all.length < 4) {
       highest = all[i];
       second = all[i];
     } else if (all[i] >= highest) {
-      second = highest
+      second = highest;
       highest = all[i];
     }
   }

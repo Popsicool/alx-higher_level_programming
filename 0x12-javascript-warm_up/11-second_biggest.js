@@ -6,13 +6,13 @@ if (all.length < 4) {
 } else {
   let highest = 0;
   let second = 0;
-  for (let i = 2; all[i]; i++) {
+  for (let i = 2; parseInt(all[i]); i++) {
     if (i === 2) {
-      highest = all[i];
-      second = all[i];
+      highest = parseInt(all[i]);
+      second = parseInt(all[i]);
     } else if (all[i] >= highest) {
       second = highest;
-      highest = all[i];
+      highest = parseInt(all[i]);
     }
   }
   console.log(second);

@@ -10,7 +10,7 @@ if (all.length < 4) {
     if (i === 2) {
       highest = parseInt(all[i]);
       second = parseInt(all[i]);
-    } else if (all[i] >= highest) {
+    } else if (parseInt(all[i]) >= highest) {
       second = highest;
       highest = parseInt(all[i]);
     }

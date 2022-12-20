@@ -8,7 +8,7 @@ if (all.length < 4) {
   for (let i = 2; parseInt(all[i]); i++) {
     a.push(parseInt(all[i]));
   }
-  a.sort();
+  a.sort((a, b) => a - b);
   a.reverse();
   console.log(a[1]);
 }

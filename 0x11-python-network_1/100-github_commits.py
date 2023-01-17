@@ -7,17 +7,18 @@ Write a Python script that takes your GitHub credentials
 import requests
 import sys
 
-repo = sys.argv[1]
-owner = sys.argv[2]
+if __name__ == "__main__":
+    repo = sys.argv[1]
+    owner = sys.argv[2]
 
 
-commits = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
-r = requests.get(commits)
-commits = r.json()
-try:
-    for i in range(10):
-        print("{}: {}".format(
-            commits[i].get("sha"),
-            commits[i].get("commit").get("author").get("name")))
-except IndexError:
-    pass
+    commits = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
+    r = requests.get(commits)
+    commits = r.json()
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass

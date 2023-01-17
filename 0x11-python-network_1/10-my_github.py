@@ -7,8 +7,9 @@ Write a Python script that takes your GitHub credentials
 import requests
 import sys
 
-username = sys.argv[1]
-password = sys.argv[2]
-auth = requests.auth.HTTPBasicAuth(username, password)
-r = requests.get("https://api.github.com/user", auth=auth)
-print(r.json().get("id"))
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    auth = requests.auth.HTTPBasicAuth(username, password)
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
